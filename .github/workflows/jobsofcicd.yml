@@ -18,14 +18,14 @@ jobs:
         run: echo "build code"
 
   test:
-   needs: [code, build]
+   needs: [build]
     runs-on: ubuntu-latest
     steps:
       - name: test
         run: echo "test code"
 
   deploy:
-    needs: [code, build, test]
+    needs: [test]
     runs-on: ubuntu-latest
     steps:
       - name: deploy
