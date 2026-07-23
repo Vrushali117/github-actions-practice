@@ -1,0 +1,28 @@
+name: jobs
+
+on: workflow_dispatch
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: code
+        run: echo "push code"
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        run: echo "build code"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: echo "test code"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy
+        run: echo "deploy code"
