@@ -7,23 +7,26 @@ jobs:
   code:
     runs-on: ubuntu-latest
     steps:
-      - name: clone the code
-        run: echo "cloning the code"
+      - name: Clone the code
+        run: echo "Cloning the code"
+
   build:
-    needs: [code]
+    needs: code
     runs-on: ubuntu-latest
     steps:
-      - name: build using the docker
-        run: echo "building using docker"
+      - name: Build using Docker
+        run: echo "Building using Docker"
+
   test:
-    needs: [build]
+    needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: running test cases
-        run: echo "Testing the app"
+      - name: Run test cases
+        run: echo "Testing the application"
+
   deploy:
-    needs: [build,test]
+    needs: test
     runs-on: ubuntu-latest
     steps:
-      - name: deployin on the maching
-        run: echo "deploying the code"
+      - name: Deploy the application
+        run: echo "Deploying the code"
