@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  push-image:
+ push-image:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,12 +17,15 @@ jobs:
       - name: Pull Hello World
         run: docker pull hello-world:latest
 
+      - name: Tag Image
+        run: |
+          docker tag hello-world:latest ${{ vars.DOCKERHUB_USERNAME }}/hello-world:latest
+
       - name: List Images
         run: docker images
-        
-      - name: Push image
-        run: |
-          docker push ${{ vars.DOCKERHUB_USERNAME }}/hello-world:latest
+
+      - name: Push Image
+        run: docker push ${{ vars.DOCKERHUB_USERNAME }}/hello-world:latest
 
       - name: Verify
         run: echo "Image pushed successfully!"
