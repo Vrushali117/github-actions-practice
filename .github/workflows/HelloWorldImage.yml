@@ -14,9 +14,12 @@ jobs:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Pull hello-world image
+      - name: Pull Hello World
         run: docker pull hello-world:latest
 
+      - name: List Images
+        run: docker images
+        
       - name: Push image
         run: |
           docker push ${{ vars.DOCKERHUB_USERNAME }}/hello-world:latest
