@@ -1,6 +1,5 @@
-# code - python 
-
 from flask import Flask, render_template
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -9,5 +8,7 @@ def hello_world():
 
 @app.route('/health')
 def health():
-    return 'Server is up and running'
-# simple linter
+    return "Server is up and running"
+
+if __name__ == "__main__":
+    app.run(debug=True)
