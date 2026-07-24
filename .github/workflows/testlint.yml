@@ -2,7 +2,7 @@
 # whenever someone change the python code, the linter will check the format, syntax, indentation
 
 
-name: Auto linter
+name: test linter
 
 on:
   push:
