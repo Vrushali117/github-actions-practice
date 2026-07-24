@@ -1,0 +1,19 @@
+#whenever code change happening then linter will check
+
+name: python linter
+
+on: 
+  push:
+    paths: "*.py"
+
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout code
+          uses: actions/checkout@v7
+
+        - name: install linter
+          run: pip install ruff
+    
